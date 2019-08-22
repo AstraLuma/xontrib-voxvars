@@ -52,3 +52,10 @@ def activate_handler(env, **_):
 def deactivate_handler(env, **_):
     # FIXME: What's the right undo algorithm and where do we source that information?
     ...
+
+
+def cmd(args, stdin=None):
+    ...
+
+
+aliases['voxvars'] = cmd
