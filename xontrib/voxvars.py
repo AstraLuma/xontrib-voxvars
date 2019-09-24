@@ -34,9 +34,9 @@ def get_venv_root(env):
 
 
 @events.vox_on_activate
-def activate_handler(env, **_):
+def activate_handler(name, **_):
     try:
-        root = get_venv_root(env)
+        root = get_venv_root(name)
     except KeyError:
         return
 
@@ -49,7 +49,7 @@ def activate_handler(env, **_):
 
 
 @events.vox_on_deactivate
-def deactivate_handler(env, **_):
+def deactivate_handler(name, **_):
     # FIXME: What's the right undo algorithm and where do we source that information?
     ...
 
